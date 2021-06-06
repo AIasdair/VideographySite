@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&display=swap');
 
 @keyframes fadeIn {
 0% {opacity:0;}
@@ -49,7 +50,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  z-index: 2;
+  z-index: 999;
 
   font-family: 'Poppins', sans-serif;
 }
@@ -76,10 +77,17 @@ nav {
   font-size: auto;
 }
 
+.logo a {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 20px;
+}
+
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 40%
+  width: 40%;
+  z-index: 999;
 }
 
 .nav-links li{
@@ -170,4 +178,152 @@ nav {
 
 .toggle .line3 {
     transform: rotate(-225deg) translate(-5px, 8px);
+}
+
+/* Home Page */
+.mainhome {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  top: 8vh;
+  left: 0;
+
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr
+}
+
+.home-text {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+}
+
+#mainpagelogo {
+  font-size: 55px;
+  letter-spacing: 5px;
+  color: white;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+.home-text #underline {
+  margin: 15px;
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.home-text h1 {
+  color: white;
+  font-family: 'Poppins', 'sans-serif';
+  font-size: 25px;
+}
+
+.home-text h4 {
+  color: white;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+.home-text button {
+  margin-top: 25px;
+  background-color: rgba(28, 28, 28, 1);
+  color: rgb(232, 100, 86);
+  border: none;
+  width: clamp(5% 15% 30%)
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Poppins', 'sans-serif';
+  font-weight: bold;
+}
+
+.home-text button:hover {
+  background-color: rgb(38, 38, 38);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+/* Contact page*/
+.contact-page {
+  position: fixed;
+  top: 20vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width: min(90%, 700px);
+}
+
+.contact-page-headers {
+  margin-bottom: 30px;
+}
+
+.contact-page-headers h1 {
+  font-family: Poppins, 'sans serif';
+  color: white;
+}
+
+.contact-page-headers p {
+  font-family: Poppins, 'sans serif';
+  color: white;
+
+  font-size: 14px;
+}
+
+.contact-form h6 {
+  color: white;
+  letter-spacing: 1.5px;
+  font-family: 'Inter', sans-serif;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.contact-form input {
+  color: white;
+  background-color: rgba(28, 28, 28, 1);
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-form textarea {
+  background-color: rgba(28, 28, 28, 1);
+  resize: none;
+  width: 100%;
+  height: 25%;
+  color: white;
+  font-size: 12px;
+  border: none;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-form button {
+  width: 25%;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: rgba(28, 28, 28, 1);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: rgb(232, 100, 86);
+  border: none;
+
+  margin-top: 10px
+}
+
+.contact-form button:hover {
+  background-color: rgb(38, 38, 38);
+  cursor: pointer;
 }
