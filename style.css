@@ -1,111 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&display=swap');
 
 @keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Background */
 body {
-  background-color: black;
-
+  overflow: hidden;  ;
   height: 100vh;
-  overflow: hidden
+  background-color: black;
 }
 
 .background {
-  /* The image used */
-  background-image: url("./images/background32.jpg");
-
-  /* Full height */
+  z-index: -1;
   height: 100vh;
 
-  /* Center and scale the image nicely */
-  background-position: center;
+  background-image: url('./images/background32.jpg');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-
-  z-index: -1;
 }
 
-#background {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  opacity: 20%;
+#backgroundvideo {
   position: fixed;
   z-index: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 20%;
+  object-fit: cover;
 }
 
 /* Navigation Bar */
 nav {
+  font-family: 'Poppins', sans-serif;
+
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 8vh;
+
   background-color: rgb(18, 18, 18);
   box-shadow: 0 1px 10px 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  z-index: 999;
-
-  font-family: 'Poppins', sans-serif;
 }
 
 .burger div {
   width: 25px;
   height: 4px;
-  background-color: White;
   margin: 5px;
-  border-radius: 20px;
 
   transition: all 0.3s ease;
+  border-radius: 20px;
+  background-color: White;
 }
 
 .burger {
-  cursor: pointer;
-  display: none; /* only show on mobile screens. */
   z-index: 999;
+
+  display: none; /* only show on mobile screens. */
+  cursor: pointer;
 }
 
 .logo {
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  z-index: 999;
   font-size: auto;
+  z-index: 999;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: white;
 }
 
 .nav-links {
+  z-index: 999;
   display: flex;
   justify-content: space-around;
   width: 40%;
-  z-index: 999;
 }
 
-.nav-links li{
-  list-style: none;
-  margin: 5px;
-  height: 100%;
+.nav-links li {
   width: 7%;
+  height: 100%;
+  margin: 5px;
+  list-style: none;
 }
 
-.nav-links a{
-  color: white;
+.nav-links a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;  ;
+  font-weight: bold;
   text-decoration: none;
   letter-spacing: 1.5px;
-
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 14px
+  color: white;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
   font-size: 15px;
 }
 
@@ -113,140 +124,77 @@ nav {
   color: rgb(232, 100, 86);
 }
 
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
- to {
-   opacity: 1;
-   transform: translateX(0px);
- }
-}
-
-@media screen and (max-width:768px) {
-  body {
-    margin-bottom: 100%;
-    overflow-y: visible;
-  }
-
-  .nav-links {
-    background-color: rgb(28, 28, 28);
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-
-    position: absolute;
-    padding-top: 10vh;
-    top: 8vh;
-    right: 0px;
-
-    width: 70%;
-    height: 100vh;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-  }
-
-  .nav-links li{
-    opacity: 0;
-  }
-
-  .logo {
-    font-size: clamp(1vh, 1.5vh, 2vh)
-  }
-
-  .burger {
-    display: block;
-  }
-}
-
-.nav-active {
-    display: flex;
-    transform: translateX(0%);
-}
-
-.toggle .line1 {
-    transform: rotate(45deg) translate(5px, 8px);
-
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: rotate(-225deg) translate(-5px, 8px);
-}
-
 /* Home Page */
 .mainhome {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-
   top: 8vh;
   left: 0;
 
-  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
 
 .home-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
+  transform: translate(-50%, -50%);  /* bring your own prefixes */
+
   text-align: center;
-  transform: translate(-50%, -50%);
 }
 
 #mainpagelogo {
-  font-size: 55px;
-  letter-spacing: 5px;
-  color: white;
   font-family: 'Poppins', 'sans-serif';
+  font-size: clamp(20px, 45px, 50px);
+  letter-spacing: 5px;
+  text-transform: capitalize;
+  color: white;
 }
 
 .home-text #underline {
+  width: 90%;
+  height: 5px;
   margin-top: 15px;
   margin-bottom: 15px;
-  width: clamp(20%, 60%, 80%);
-  height: 5px;
-  background-color: white;
-  border-radius: 5px;
-
-
   margin-left: 50%;
+
   transform: translateX(-50%);
+
+  border-radius: 5px;
+  background-color: white;
 }
 
 .home-text h1 {
-  color: white;
   font-family: 'Poppins', 'sans-serif';
   font-size: clamp(20px, 25px, 30px);
+  color: white;
 }
 
 .home-text h4 {
-  color: white;
   font-family: 'Poppins', 'sans-serif';
+  color: white;
 }
 
 .home-text button {
-  margin-top: 25px;
-  background-color: rgba(28, 28, 28, 1);
-  color: rgb(232, 100, 86);
-  border: none;
-  width: clamp(5% 15% 30%)
-  height: 50px;
-  padding: 10px;
-  border-radius: 5px;
   font-family: 'Poppins', 'sans-serif';
+  font-size: 12px;
   font-weight: bold;
+
+  width: clamp(5% 15% 30%);
+  height: 50px;
+  margin-top: 25px;
+  padding: 10px;
+
+  color: rgba(232, 100, 86, 0.8);
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .home-text button:hover {
-  background-color: rgb(38, 38, 38);
   cursor: pointer;
+  color: rgb(232, 100, 86);
+  background-color: rgb(38, 38, 38);
 }
 
 
@@ -255,9 +203,9 @@ nav {
 .contact-page {
   position: absolute;
   top: clamp(10%, 15%, 20%);
-  margin-left: 5vw;
-  margin-right: 5vw;
   width: min(90%, 700px);
+  margin-right: 5vw;
+  margin-left: 5vw;
 }
 
 .contact-page-headers {
@@ -266,70 +214,134 @@ nav {
 
 .contact-page-headers h1 {
   font-family: Poppins, 'sans serif';
+  font-size: clamp(3vh, 5vh, 6vh);  ;
   color: white;
-
-  font-size: clamp(3vh, 5vh, 6vh)
 }
 
 .contact-page-headers p {
   font-family: Poppins, 'sans serif';
-  color: white;
-
   font-size: 1em;
+  color: white;
 }
 
 .contact-form h6 {
-  color: white;
-  letter-spacing: 1.5px;
-  font-size: clamp(1vh, 1.5vh, 2vh);
   font-family: 'Inter', sans-serif;
+  font-size: clamp(1vh, 1.5vh, 2vh);
+  letter-spacing: 1.5px;
+  color: white;
 }
 
 textarea:focus, input:focus{
-    outline: none;
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 100px rgb(28, 28, 28) inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
 .contact-form input {
-  color: white;
-  background-color: rgba(28, 28, 28, 1);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1vh, 1.5vh, 1.5vh);
+
+  width: 100%;
   margin-bottom: 2em;
   padding: 2em;
-  width: 100%;
+
+  color: white;
   border: none;
   border-radius: 5px;
-
-  font-size: clamp(1vh, 1.5vh, 1.5vh);
-  font-family: 'Inter', sans-serif;
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .contact-form textarea {
-  background-color: rgba(28, 28, 28, 1);
-  resize: none;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1vh, 1.5vh, 1.5vh);
+
   width: 100%;
   height: 25%;
-  color: white;
-  font-size: clamp(1vh, 1.5vh, 1.5vh);
-  border: none;
   margin-bottom: 2em;
   padding: 2em;
+  resize: none;
+
+  color: white;
+  border: none;
   border-radius: 5px;
-  font-family: 'Inter', sans-serif;
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .contact-form button {
-  width: clamp(25%, 25%, 30%);
-  height: clamp(6vh, 6.5vh, 7vh);
-  border-radius: 5px;
-  background-color: rgba(28, 28, 28, 1);
   font-family: 'Poppins', sans-serif;
   font-size: 1em;
+
+  width: clamp(25%, 25%, 30%);
+  height: clamp(6vh, 6.5vh, 7vh);
+  margin-top: 0.5em;
+
   color: rgb(232, 100, 86);
   border: none;
-
-  margin-top: 0.5em;
+  border-radius: 5px;
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .contact-form button:hover {
-  background-color: rgb(38, 38, 38);
   cursor: pointer;
+  background-color: rgb(38, 38, 38);
+}
+
+/* Media Queries */
+@media screen and (max-width:768px) {
+  body {
+    overflow-y: visible;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+
+    display: none;
+    align-items: center;
+    flex-direction: column;
+
+    width: 70%;
+    height: 100vh;
+    padding-top: 10vh;
+
+    transition: transform 0.3s ease-in;
+    transform: translateX(100%);
+    background-color: rgb(28, 28, 28);
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .logo {
+    font-size: clamp(1vh, 1.5vh, 2vh);
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  display: flex;
+  transform: translateX(0%);
+}
+
+.toggle .line1 {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(-225deg) translate(-5px, 8px);
 }
